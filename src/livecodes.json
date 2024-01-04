@@ -1,0 +1,38 @@
+{
+  "title": "Deaths in Israeli/Palestinian conflicts",
+  "description": "",
+  "head": "<meta charset=\"UTF-8\" />\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />",
+  "htmlAttrs": "lang=\"en\" class=\"\"",
+  "tags": [],
+  "activeEditor": "script",
+  "markup": {
+    "language": "html",
+    "content": "<div id=\"race\">Loading...</div>"
+  },
+  "style": {
+    "language": "css",
+    "content": "#race { height: 80vh; }"
+  },
+  "script": {
+    "language": "javascript",
+    "content": "import { race } from \"./racing-bars.js\";\n\nconst options = {\n  dataType: \"csv\",\n  dataShape: \"wide\",\n  title: \"Deaths in Israeli/Palestinian conflicts\",\n  subTitle: \"\",\n  caption: \"Source: OCHA\",\n  dateCounter: \"YYYY\",\n  showIcons: true,\n  labelsPosition: \"outside\",\n  colorMap: {\n    Palestinians: \"#1abb57\",\n    Israelis: \"#2f62d8\",\n  },\n  fixedScale: true,\n  topN: 3,\n  dataTransform: (data) => data.map((d) => ({\n    ...d,\n    date: d.date + '-01-02',\n  })),\n};\nrace(\"./data.csv\", \"#race\", options);\n"
+  },
+  "stylesheets": [],
+  "scripts": [],
+  "cssPreset": "",
+  "processors": [],
+  "customSettings": {},
+  "imports": {
+    "racing-bars": "http://localhost:3000/lib/racing-bars.js",
+    "racing-bars/react": "http://localhost:3000/lib/react.js",
+    "racing-bars/vue": "http://localhost:3000/lib/vue.js"
+  },
+  "types": {
+    "racing-bars": "http://localhost:3000/lib/racing-bars.d.ts"
+  },
+  "tests": {
+    "language": "typescript",
+    "content": ""
+  },
+  "version": "19"
+}
