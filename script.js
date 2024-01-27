@@ -1,4 +1,4 @@
-import { loadData, race } from 'racing-bars';
+import { loadData, race } from 'https://racing-bars.hatemhosny.dev/lib/racing-bars.js';
 
 const options = {
   selector: '#race',
